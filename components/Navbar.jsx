@@ -23,7 +23,7 @@ const Navbar = () => (
     </Box>
     <Spacer />
     <Box>
-      <Menu>
+      <Menu id="navbar" isLazy>
         <MenuButton
           as={IconButton}
           icon={<FcMenu />}

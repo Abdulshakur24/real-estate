@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Box, Icon, Flex } from "@chakra-ui/react";
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
+import glide from "@glidejs/glide";
 
 const LeftArrow = () => {
   const { scrollPrev } = useContext(VisibilityContext);
@@ -42,7 +43,7 @@ export default function ImageSrollbar({ data }) {
       style={{ overflow: "hidden" }}
     >
       {data.map((item, index) => (
-        <Box key={index} width="910px" itemId={item.id} overflow="hidden" p="1">
+        <Box key={index} width="910px" itemID={item.id} overflow="hidden" p="1">
           <Image
             placeholder="blur"
             blurDataURL={item.url}
