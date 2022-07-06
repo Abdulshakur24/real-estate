@@ -3,13 +3,12 @@ import Head from "next/head";
 import NProgress from "nprogress";
 import { ChakraProvider } from "@chakra-ui/react";
 import { theme } from "@chakra-ui/theme";
-import { ToastContainer, toast } from "react-toastify";
 
 import Layout from "../components/Layout";
 import nprogress from "nprogress";
 
 function MyApp({ Component, pageProps }) {
-  NProgress.configure({ showSpinner: false });
+  NProgress.configure({ showSpinner: true });
 
   Router.events.on("routeChangeStart", () => {
     NProgress.start();
@@ -21,7 +20,6 @@ function MyApp({ Component, pageProps }) {
 
   Router.events.on("routeChangeError", () => {
     nprogress.done();
-    toast("Connection failed.");
   });
 
   return (
@@ -38,7 +36,6 @@ function MyApp({ Component, pageProps }) {
       <ChakraProvider theme={theme}>
         <Layout>
           <Component {...pageProps} />
-          <ToastContainer />
         </Layout>
       </ChakraProvider>
     </>
